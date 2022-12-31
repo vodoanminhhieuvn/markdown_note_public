@@ -1,0 +1,28 @@
+@authToken = {{login.response.body.token}}
+// The request body is provided in place
+//? Sign up request
+# @name register
+POST {{base_url}}/auth/signup HTTP/1.1
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "name": "Test username",
+  "email": "test@jb.jb",
+  "password": "jb123"
+}
+
+###
+//? Sign in request
+# @name login
+POST {{base_url}}/auth/signin HTTP/1.1
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "email": "test@jb.jb",
+  "password": "jb123"
+}
+
+
+
